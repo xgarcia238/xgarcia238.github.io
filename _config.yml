@@ -1,14 +1,14 @@
 # Setup
-title:        Project or Site name
-tagline:      A responsive theme for your project on GitHub Pages
+title:        Xavier Garcia
+tagline:      Aspiring research scientist.
 baseurl:      ""
 paginate:     1
 locale:       "en"
 
 # About/contact
 author:
-  name:       Author name
-  url:        http://yourhomepage.com 
+  name:       Xavier Garcia
+  url:        https://xgarcia238.github.io/
 
 # Gems
 gems:
