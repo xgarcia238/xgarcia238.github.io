@@ -4,6 +4,7 @@ tagline:      Aspiring research scientist.
 baseurl:      ""
 paginate:     1
 locale:       "en"
+show_downloads: false
 
 # About/contact
 author:

@@ -4,7 +4,7 @@ title: "Self-Attention in the Transformer"
 author: Xavier Garcia
 category: misc
 mathjax: true
-
+visible: 1
 ---
 
 The purpose of these notes is to explain the self-attention mechanism in the paper "Attention is all you need". We begin by discussing the simplest setup and expanding, drawing analogies between the Transformer model and intermediate models.
