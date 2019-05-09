@@ -1,3 +1,7 @@
+---
+layout: page
+title:  Documentation
+---
 #  Projects
 
 ## 8-bit VAE: A latent variable model for NES music
