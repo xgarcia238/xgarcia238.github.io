@@ -1,6 +1,6 @@
 ---
 # Featured tags need to have the `list` layout.
-layout: list
+layout: page
 
 # The title of the tag's page.
 title: Projects
