@@ -12,24 +12,6 @@ The purpose of these notes is to explain the self-attention mechanism in the pap
 
 # Seq2Seq Framework
 
-$$
-\begin{align*}
-e^x &= 1 + x + x^2 + ... \\
-&= TaylorSeries(e^x)
-\end{align*}
-$$
-
-$$
-\begin{align*}
-\log p_{\theta}(x) &= \log \int p_{\theta}(x,z) dz \\
-&= \log \int \frac{p_{\theta}(x,z)}{q(z|x)} q(z|x) dz \\
-&= \log \mathbb{E}_{z \sim q} \left[ \frac{p(x,z)}{q(z|x)} \right] \\
-&\geq \mathbb{E}_{z \sim q} \left[ \log \frac{p(x,z)}{q(z|x)} \right] \\
-&= \mathbb{E}_{z \sim q} [ \log p(x|z) ] - \mathbb{E}_{z \sim q} \left[ \log \frac{q(z|x)}{p(z)}  \right] \\
-&= \mathbb{E}_{z \sim q} [\log p(x|z)] - \text{KL}( q(z | x) || p(z))
-\end{align*}
-$$
-
 We begin by establishing the setting. We have an input sequence $\textbf{x} = (x_1,... ,x_L)$, where each $x_i \in \mathbb{R}^{d_{\text{input}}}$ will represent some vector representation of a word as well as a target sequence $\textbf{y} = (y_1,..., y_{L'})$ where we'll think of the $y_i$ as being integer-valued, representing the index of some word in some dictionary of size $d_{\text{output}}$.
 
 For simplicity, consider the simplest RNN encoder-decoder scheme where both the encoder and the decoder are vanilla RNN. The encoder consumes the sequence $\textbf{x}$ and produces a sequence of hidden states $\textbf{h} = (h_1, ... ,h_L)$ where $h_i \in \mathbb{R}^{d_{\text{hidden}}}$. These hidden states serve as representations for the words at each time, endowed with the context from the words that came before it. We then produce a new hidden state $q_0 = q_0(\textbf{h})$, depending on the previous the hidden states. Traditionally, $q_0 = h_L$, but we don't need to make this assumption. We use this as the initial hidden state for another RNN, termed the decoder, which will autoregressively produce $\textbf{y}$. More precisely, the input to the decoder will be the sequence given by $(\texttt{sos} , y_1,... y_{L'-1})$, where the $\texttt{sos}$ token stands for start of sentence with some predetermined index in our dictionary. With this input, the decoder then produces its own set of hidden states $\textbf{Q} = (q_1, ..., q_{L'})$, and we use this to compute the logits for our predictions. Explicitly, we have the formula: 
