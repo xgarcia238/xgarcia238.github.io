@@ -12,6 +12,23 @@ The purpose of these notes is to explain the self-attention mechanism in the pap
 
 # Seq2Seq Framework
 
+$$
+\begin{align*}
+e^x &= 1 + x + x^2 + ... \\
+&= TaylorSeries(e^x)
+\end{align*}
+$$
+
+$$
+\begin{align*}
+\log p_{\theta}(x) &= \log \int p_{\theta}(x,z) dz \\
+&= \log \int \frac{p_{\theta}(x,z)}{q(z|x)} q(z|x) dz \\
+&= \log \mathbb{E}_{z \sim q} \left[ \frac{p(x,z)}{q(z|x)} \right] \\
+&\geq \mathbb{E}_{z \sim q} \left[ \log \frac{p(x,z)}{q(z|x)} \right] \\
+&= \mathbb{E}_{z \sim q} [ \log p(x|z) ] - \mathbb{E}_{z \sim q} \left[ \log \frac{q(z|x)}{p(z)}  \right] \\
+&= \mathbb{E}_{z \sim q} [\log p(x|z)] - \text{KL}( q(z | x) || p(z))
+\end{align*}
+$$
 
 We begin by establishing the setting. We have an input sequence $\textbf{x} = (x_1,... ,x_L)$, where each $x_i \in \mathbb{R}^{d_{\text{input}}}$ will represent some vector representation of a word as well as a target sequence $\textbf{y} = (y_1,..., y_{L'})$ where we'll think of the $y_i$ as being integer-valued, representing the index of some word in some dictionary of size $d_{\text{output}}$.
 
