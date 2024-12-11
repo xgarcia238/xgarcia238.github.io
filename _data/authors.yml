@@ -3,7 +3,7 @@
 # Change `author1` to your shortname.
 author1:
   name:              Xavier Garcia
-  email:             <mail@domain.tld>
+  email:             xgarcia238@gmail.com
 
   # Used at the bottom of each page and at the top of the `about` layout
   # Markdown enabled, can use multiple paragraphs (enabled by `|`)
@@ -22,9 +22,9 @@ author1:
   # Comment/uncommet to show/hide
   # Rearrange to change the order in which they appear
   social:
-    twitter:         <username>
+    twitter:         xgarcia238
     github:          xgarcia238
-    # email:           <mail@domain.tld>
+    # email:           xgarcia238@gmail.com
     # rss:             https://<url>/feed.xml
     # facebook:        <username>
     # google:          <number>
